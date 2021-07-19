@@ -1,7 +1,3 @@
-# Veritas API
-
-## Receipts
-
 Veritas Receipts are used as a unique object issued to the purchaser that can be linked at a later time to a review. The receipt is encrypted onto the blockchain and is only visible to the issuers of the receipt. Issuers can also lock up redeemable rewards into the receipt, allowing reviewers to redeem the reward upon leaving a verified review.
 
 ### Issue Receipt
@@ -110,62 +106,3 @@ Response:
   }
 ]
 ```
-
-## Reviews
-
-Reviews submitted through Veritas are automatically added to Britevue and distinguished as a Verified Review. If the receipt contains an issued reward, the reward is issued to the user and is redeemed when the user signs up for an account on Britevue. If the email is already linked to a Britevue account, then the reward is sent directly to the Handcash wallet associated with the user. 
-
-### Submit Review
-
-
-`[POST] /api/veritas`
-
-Request Body:
-```
-{
-  "receiptID": "c859b888d3e20a2d6132cbdb732617e1a2701e7bb63029d752a0a6c1d35beba2",
-  "receiptSecret: "c4ab3985ab32ef3e34ee5",
-  "review": "I loved it! This is an incredible place to get drinks, and Ashley was terrific!",
-  "ratings": {
-    "quality": 4.5,
-    "experience": 3.0,
-    "value": 4.5
-  }
-}
-```
-
-Response:
-```
-NOTE: If token has an unlockable reward, the reward is issued to the user
-NOTE: rewardID and rewardSecret are optional
-{
-  "reviewID": "f31bfd0b8bdd25bfe0dcbc62aea3ef45c0dcaa815832fb75b7d58c187645d067",
-  "rewardID": "c859b888d3e20a2d6132cbdb732617e1a2701e7bb63029d752a0a6c1d35beba2",
-  "rewardSecret": "c4ab3985ab32ef3e34ee5"
-}
-```
-
-## Rewards
-
-Rewards issued through Veritas are issued directly to the user if there is a Britevue account associated with the email address in the receipt/review, or they are issued and redeemable via a unique URL that is used when signing up for Britevue.
-
-### Redeem Reward
-`[POST] /api/reward`
-
-Request Body:
-```
-{
-  "rewardID": "c859b888d3e20a2d6132cbdb732617e1a2701e7bb63029d752a0a6c1d35beba2",
-  "rewardSecret": "c4ab3985ab32ef3e34ee5",
-  "url": "https://britevue.com/sign-up?reward-id=c859b888d3e20a2d6132cbdb732617e1a2701e7bb63029d752a0a6c1d35beba2&reward-secret=c4ab3985ab32ef3e34ee5"
-}
-```
-
-Response:
-```
-{
-  "txId: "c859b888d3e20a2d6132cbdb732617e1a2701e7bb63029d752a0a6c1d35beba2"
-}
-```
-
-

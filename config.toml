@@ -1,5 +1,5 @@
-baseURL = "http://localhost"
-title = "Geekdocs"
+baseURL = "https://veritas-docs.britevue.com"
+title = "Veritas"
 theme = "hugo-geekdoc"
 
 pluralizeListTitles = false

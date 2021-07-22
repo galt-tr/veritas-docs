@@ -34,7 +34,7 @@ NOTE: meta is entirely extensible
   "placeMeta": {
       "address": "368 College Ave, Clemson, SC 29631",
       "name": "Tiger Town Tavern",
-      "phone": "(864) 654-5901"
+      "phone": "+18646545901"
   },
   "email": "connor@britevue.com",
   "meta": {

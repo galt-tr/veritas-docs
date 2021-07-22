@@ -1,15 +1,35 @@
-Veritas Receipts are used as a unique object issued to the purchaser that can be linked at a later time to a review. The receipt is encrypted onto the blockchain and is only visible to the issuers of the receipt. Issuers can also lock up redeemable rewards into the receipt, allowing reviewers to redeem the reward upon leaving a verified review.
+Veritas Receipts are used as a unique object issued to the purchaser that can
+be linked at a later time to a review. The receipt is encrypted onto the
+blockchain and is only visible to the issuers of the receipt. Issuers can also
+lock up redeemable rewards into the receipt, allowing reviewers to redeem the
+reward upon leaving a verified review.
+
+By default, Veritas expects the receipts to contain the Google Place ID of the
+location. If that is not present, `placeMeta` must be filled out with at least
+one field (the more the higher likelihood of finding the best matching location
+on Google). This works by using the hierarchy of:
+1. Phone Number
+1. Name
+1. Address
+
+If you supply a phone number, it must be formatted with the international call
+prefix i.e.:
+```
++14124424202
+```
+
+For best results with an address, supply it in a formatted manner.
 
 ### Issue Receipt
 
-`[POST] /api/receipt`
+`[POST] /veritas/receipt`
 
 Request Body:
 ```
 NOTE: id is Google Place ID. Optional in the request, but if not included then placeMeta must contain data.
 NOTE: meta is entirely extensible
 {
-  "id": "ChIJBY0_1XBTBogRonhPkB-U82w",
+  "placeId": "ChIJBY0_1XBTBogRonhPkB-U82w",
   "customerId": "barpay",
   "placeMeta": {
       "address": "368 College Ave, Clemson, SC 29631",

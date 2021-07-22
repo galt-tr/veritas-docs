@@ -1,4 +1,8 @@
-Reviews submitted through Veritas are automatically added to Britevue and distinguished as a Verified Review. If the receipt contains an issued reward, the reward is issued to the user and is redeemed when the user signs up for an account on Britevue. If the email is already linked to a Britevue account, then the reward is sent directly to the Handcash wallet associated with the user. 
+Reviews submitted through Veritas are automatically added to Britevue and
+distinguished as a Verified Review. If the receipt contains an issued reward,
+the reward is issued to the user and is redeemed when the user signs up for an
+account on Britevue. If the email is already linked to a Britevue account, then
+the reward is sent directly to the Handcash wallet associated with the user. 
 
 ### Submit Review
 
@@ -10,7 +14,7 @@ Request Body:
 {
   "receiptID": "c859b888d3e20a2d6132cbdb732617e1a2701e7bb63029d752a0a6c1d35beba2",
   "receiptSecret: "c4ab3985ab32ef3e34ee5",
-  "review": "I loved it! This is an incredible place to get drinks, and Ashley was terrific!",
+  "reviewBody": "I loved it! This is an incredible place to get drinks, and Ashley was terrific!",
   "ratings": {
     "quality": 4.5,
     "experience": 3.0,

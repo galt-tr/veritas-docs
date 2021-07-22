@@ -7,7 +7,7 @@ the reward is sent directly to the Handcash wallet associated with the user.
 ### Submit Review
 
 
-`[POST] /api/veritas`
+`[POST] /veritas/review`
 
 Request Body:
 ```

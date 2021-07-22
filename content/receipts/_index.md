@@ -62,7 +62,7 @@ Response:
 
 ### Get Receipt Info
 
-`[GET] /api/receipt/<id>`
+`[GET] /veritas/receipt/<id>`
 
 Response:
 ```
@@ -86,7 +86,7 @@ Response:
 
 ### Get Receipts for Place
 
-`[GET] /api/receipts?filter=place&id=ChIJBY0_1XBTBogRonhPkB-U82w`
+`[GET] /veritas/receipts?filter=place&id=ChIJBY0_1XBTBogRonhPkB-U82w`
 
 Response:
 
